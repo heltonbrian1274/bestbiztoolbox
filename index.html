@@ -1,179 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestBizToolbox — Top SaaS Tools to Grow Your Business</title>
-
-    <!-- ✅ SEO Meta Tags -->
-    <meta name="description" content="Discover top SaaS tools for CRM, marketing, and automation. Compare platforms and start free — no credit card needed. Grow your business smarter today!
-    " />
-    <link rel="canonical" href="https://bestbiztoolbox.vercel.app" />
-
-    <!-- ✅ Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="BestBizToolbox - Find the Perfect SaaS Tools for Your Business" />
-    <meta property="og:description" content="Discover top-rated SaaS platforms for CRM, marketing, and automation. No sales calls, just smart software." />
-    <meta property="og:image" content="https://bestbiztoolbox.vercel.app/og-image.jpg" />
-    <meta property="og:url" content="https://bestbiztoolbox.vercel.app" />
-    <meta property="og:site_name" content="BestBizToolbox" />
-
-    <!-- ✅ Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BestBizToolbox - Find the Perfect SaaS Tools for Your Business" />
-    <meta name="twitter:description" content="Explore the best tools to grow your business — CRMs, automation, and more." />
-    <meta name="twitter:image" content="https://bestbiztoolbox.vercel.app/og-image.jpg" />
-
-    <!-- ✅ Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-    <!-- ✅ JSON-LD Structured Data -->
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover top SaaS tools for CRM, marketing, and automation. Compare platforms and start free — no credit card needed. Grow your business smarter today!">
+    <meta name="keywords" content="SaaS tools, CRM software, marketing automation, business growth, HubSpot, free trial">
+    <link rel="canonical" href="https://bestbiztoolbox.vercel.app">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BestBizToolbox - Find the Perfect SaaS Tools for Your Business">
+    <meta property="og:description" content="Discover top-rated SaaS platforms for CRM, marketing, and automation. No sales calls, just smart software.">
+    <meta property="og:image" content="https://bestbiztoolbox.vercel.app/og-image.webp">
+    <meta property="og:url" content="https://bestbiztoolbox.vercel.app">
+    <meta property="og:site_name" content="BestBizToolbox">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BestBizToolbox - Find the Perfect SaaS Tools for Your Business">
+    <meta name="twitter:description" content="Explore the best tools to grow your business — CRMs, automation, and more.">
+    <meta name="twitter:image" content="https://bestbiztoolbox.vercel.app/og-image.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "BestBizToolbox",
       "url": "https://bestbiztoolbox.vercel.app",
-      "description": "BestBizToolbox helps business owners find the best SaaS tools for CRM, marketing, automation, and service. Compare platforms and start free today."
+      "description": "BestBizToolbox helps business owners find the best SaaS tools for CRM, marketing, automation, and service. Compare platforms and start free today.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BestBizToolbox"
+      }
     }
     </script>
 
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+            --accent-color: #ff6b6b;
+            --text-dark: #2c3e50;
+            --text-light: #64748b;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: var(--text-dark);
+            background: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
+        /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 4rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
 
         .header-content h1 {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .header-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .header-content .subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            margin-bottom: 1rem;
+            opacity: 0.95;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .header-content .description {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
         .cta-button {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 16px 32px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            transition: var(--transition);
+            box-shadow: 0 4px 14px 0 rgba(255, 107, 107, 0.39);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
             background: #ff5252;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px 0 rgba(255, 107, 107, 0.45);
         }
 
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .secondary-cta {
+            background: #667eea;
+            color: var(--white);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .secondary-cta:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        /* Featured Tool Section */
         .featured-tool {
-            background: white;
-            margin: 4rem 0;
-            border-radius: 20px;
+            background: var(--white);
+            margin: 5rem 0;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .featured-tool-header {
-            background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
-            color: white;
-            padding: 2rem;
+            background: var(--secondary-gradient);
+            color: var(--white);
+            padding: 3rem 2rem;
             text-align: center;
+            position: relative;
+        }
+
+        .featured-tool-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zm-16-12c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+            z-index: 1;
+        }
+
+        .featured-tool-header > * {
+            position: relative;
+            z-index: 2;
         }
 
         .featured-tool-header h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .featured-tool-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            opacity: 0.95;
         }
 
         .featured-tool-content {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .tool-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #333;
+            font-size: clamp(1.5rem, 3vw, 1.875rem);
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .tool-info p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            line-height: 1.7;
         }
 
         .features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .features li {
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             font-size: 1rem;
             position: relative;
             padding-left: 2rem;
+            color: var(--text-dark);
         }
 
-        .features li:before {
+        .features li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #4caf50;
-            font-weight: bold;
+            color: #10b981;
+            font-weight: 700;
             font-size: 1.2rem;
         }
 
+        /* Tool Embed */
         .tool-embed {
-            background: #f8f9fa;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
             padding: 2rem;
             text-align: center;
-            color: #666;
-            min-height: 300px;
+            min-height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -182,21 +298,27 @@
 
         .tool-embed h4 {
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-            color: #33475b;
+            font-size: 1.375rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .embed-placeholder {
-            background: white;
-            border: 1px solid #e1e5e9;
-            border-radius: 8px;
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
             padding: 2rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .embed-placeholder:hover {
+            box-shadow: var(--shadow-light);
         }
 
         .embed-placeholder .icon {
@@ -206,116 +328,117 @@
 
         .embed-placeholder h5 {
             margin-bottom: 0.5rem;
-            color: #33475b;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .embed-placeholder p {
-            color: #7c98b6;
+            color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
+        /* Tools Grid */
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin: 4rem 0;
+            margin: 5rem 0;
         }
 
         .tool-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .tool-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
         }
 
         .tool-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .tool-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
-        .tool-card .price {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #4caf50;
-            margin-bottom: 1rem;
-            display: none;
-        }
-
-        .secondary-cta {
-            background: #667eea;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .secondary-cta:hover {
-            background: #5a6fd8;
-            transform: translateY(-2px);
-        }
-
+        /* Why Choose Section */
         .why-choose {
-            background: white;
-            margin: 4rem 0;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: var(--white);
+            margin: 5rem 0;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-medium);
         }
 
         .why-choose h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-            color: #333;
+            color: var(--text-dark);
+            font-weight: 700;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .benefit {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .benefit:hover {
+            transform: translateY(-4px);
         }
 
         .benefit-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: block;
         }
 
         .benefit h3 {
-            font-size: 1.3rem;
+            font-size: 1.375rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .benefit p {
-            color: #666;
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
+        /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .affiliate-disclosure {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            font-size: 0.9rem;
+            border-left: 4px solid #667eea;
         }
 
         .footer-content {
@@ -326,46 +449,39 @@
         }
 
         .footer-section h4 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 1rem;
-            color: #ecf0f1;
+            color: var(--white);
+            font-weight: 600;
         }
 
         .footer-section a {
-            color: #bdc3c7;
+            color: #94a3b8;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .footer-section a:hover {
-            color: #3498db;
-        }
-
-        .affiliate-disclosure {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-            border-left: 4px solid #667eea;
+            color: #3b82f6;
         }
 
         .footer-bottom {
-            border-top: 1px solid #34495e;
+            border-top: 1px solid #475569;
             padding-top: 2rem;
-            color: #95a5a6;
+            text-align: center;
+            color: #94a3b8;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2rem;
+            .container {
+                padding: 0 16px;
             }
 
-            .header-content p {
-                font-size: 1.1rem;
+            header {
+                padding: 3rem 0;
             }
 
             .featured-tool-content {
@@ -376,6 +492,7 @@
 
             .tools-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .benefits-grid {
@@ -386,6 +503,43 @@
                 grid-template-columns: 1fr;
                 text-align: left;
             }
+
+            .tool-card {
+                padding: 2rem;
+            }
+
+            .why-choose {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Performance optimizations */
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Focus styles */
+        .cta-button:focus,
+        .secondary-cta:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
         }
     </style>
 </head>
@@ -394,18 +548,21 @@
         <div class="container">
             <div class="header-content">
                 <h1>BestBizToolbox</h1>
-                <p>Find the Perfect SaaS Tools for Your Business</p>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Streamline operations, boost productivity, and grow your business with the right software solutions. No sales calls, no hassle.</p>
-                <a href="https://www.hubspot.com/products/get-started" target="_blank" class="cta-button">Get Started Free</a>
+                <p class="subtitle">Find the Perfect SaaS Tools for Your Business</p>
+                <p class="description">Streamline operations, boost productivity, and grow your business with the right software solutions. No sales calls, no hassle.</p>
+                <a href="https://www.hubspot.com/products/get-started" target="_blank" rel="noopener" class="cta-button" aria-label="Get started with HubSpot for free">
+                    Get Started Free
+                    <span aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <section id="featured-tool" class="featured-tool">
+            <section id="featured-tool" class="featured-tool" aria-labelledby="featured-heading">
                 <div class="featured-tool-header">
-                    <h2>🏆 Most Popular Choice</h2>
+                    <h2 id="featured-heading">🏆 Most Popular Choice</h2>
                     <p>The all-in-one platform that 120,000+ businesses trust</p>
                 </div>
                 <div class="featured-tool-content">
@@ -419,64 +576,75 @@
                             <li>Advanced analytics dashboard</li>
                             <li>Integration with 500+ apps</li>
                         </ul>
-                        <a href="https://www.hubspot.com/products/get-started" target="_blank" class="cta-button">Start Free - No Credit Card Required</a>
+                        <a href="https://www.hubspot.com/products/get-started" target="_blank" rel="noopener" class="cta-button" aria-label="Start HubSpot free trial">
+                            Start Free - No Credit Card Required
+                        </a>
                     </div>
                     <div class="tool-embed">
                         <h4>Try HubSpot's Free Meeting Scheduler</h4>
                         <p>Book meetings instantly with HubSpot's free scheduling tool - no back-and-forth emails needed.</p>
                         
                         <div class="embed-placeholder">
-                            <div class="icon">📅</div>
+                            <div class="icon" aria-hidden="true">📅</div>
                             <h5>HubSpot Meeting Scheduler</h5>
                             <p>Schedule meetings with clients instantly</p>
                         </div>
                         
-                        <a href="https://www.hubspot.com/products/get-started" target="_blank" class="secondary-cta">Get Your Free Scheduler</a>
+                        <a href="https://www.hubspot.com/products/get-started" target="_blank" rel="noopener" class="secondary-cta" aria-label="Get your free HubSpot scheduler">
+                            Get Your Free Scheduler
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <section class="why-choose">
-                <h2>Why Smart Business Owners Choose These Tools</h2>
+            <section class="why-choose" aria-labelledby="why-choose-heading">
+                <h2 id="why-choose-heading">Why Smart Business Owners Choose These Tools</h2>
                 <div class="benefits-grid">
                     <div class="benefit">
-                        <span class="benefit-icon">⚡</span>
+                        <span class="benefit-icon" aria-hidden="true">⚡</span>
                         <h3>Instant Setup</h3>
                         <p>Get started in minutes, not months. No lengthy implementation or training required.</p>
                     </div>
                     <div class="benefit">
-                        <span class="benefit-icon">💰</span>
+                        <span class="benefit-icon" aria-hidden="true">💰</span>
                         <h3>Transparent Pricing</h3>
                         <p>Clear, upfront pricing with free trials. No hidden fees or surprise charges.</p>
                     </div>
                     <div class="benefit">
-                        <span class="benefit-icon">🔧</span>
+                        <span class="benefit-icon" aria-hidden="true">🔧</span>
                         <h3>Technical Excellence</h3>
                         <p>Built by developers, for businesses. Robust APIs, security, and scalability.</p>
                     </div>
                     <div class="benefit">
-                        <span class="benefit-icon">📈</span>
+                        <span class="benefit-icon" aria-hidden="true">📈</span>
                         <h3>Proven Results</h3>
                         <p>Used by thousands of successful businesses. Real ROI, not just features.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="tools-grid">
+            <section class="tools-grid" aria-labelledby="tools-heading">
+                <h2 id="tools-heading" class="sr-only">Featured Tools</h2>
                 <div class="tool-card">
                     <h3>HubSpot Marketing Hub</h3>
                     <p>Complete marketing automation platform with email, social media, and lead generation tools. Start free and scale as you grow.</p>
-                    <a href="https://www.hubspot.com/products/marketing" target="_blank" class="secondary-cta">Start Free</a>
+                    <a href="https://www.hubspot.com/products/marketing" target="_blank" rel="noopener" class="secondary-cta" aria-label="Start HubSpot Marketing Hub free">
+                        Start Free
+                    </a>
                 </div>
                 <div class="tool-card">
                     <h3>HubSpot Sales Hub</h3>
                     <p>Advanced CRM with pipeline management, email tracking, and sales automation features. Free forever for essential features.</p>
-                    <a href="https://www.hubspot.com/products/crm" target="_blank" class="secondary-cta">Start Free</a>
+                    <a href="https://www.hubspot.com/products/crm" target="_blank" rel="noopener" class="secondary-cta" aria-label="Start HubSpot Sales Hub free">
+                        Start Free
+                    </a>
                 </div>
                 <div class="tool-card">
                     <h3>HubSpot Service Hub</h3>
                     <p>Customer service platform with ticketing, knowledge base, and customer feedback tools. Free tier available.</p>
-                    <a href="https://www.hubspot.com/products/service" target="_blank" class="secondary-cta">Start Free</a>
+                    <a href="https://www.hubspot.com/products/service" target="_blank" rel="noopener" class="secondary-cta" aria-label="Start HubSpot Service Hub free">
+                        Start Free
+                    </a>
                 </div>
             </section>
         </div>
@@ -485,35 +653,35 @@
     <footer>
         <div class="container">
             <div class="affiliate-disclosure">
-                <p style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
+                <p>
                     <strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may receive a commission if you click through and purchase HubSpot products. This comes at no additional cost to you and helps support our site.
                 </p>
             </div>
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Popular Tools</h4>
-                    <a href="https://www.hubspot.com/products/crm">HubSpot CRM</a>
-                    <a href="https://www.hubspot.com/products/marketing">Marketing Automation</a>
-                    <a href="https://www.hubspot.com/products/crm">Sales Pipeline</a>
-                    <a href="https://www.hubspot.com/products/service">Customer Service</a>
+                    <a href="https://www.hubspot.com/products/crm" target="_blank" rel="noopener">HubSpot CRM</a>
+                    <a href="https://www.hubspot.com/products/marketing" target="_blank" rel="noopener">Marketing Automation</a>
+                    <a href="https://www.hubspot.com/products/crm" target="_blank" rel="noopener">Sales Pipeline</a>
+                    <a href="https://www.hubspot.com/products/service" target="_blank" rel="noopener">Customer Service</a>
                 </div>
                 <div class="footer-section">
                     <h4>Get Started</h4>
-                    <a href="https://www.hubspot.com/products/get-started">Free Trial</a>
-                    <a href="https://www.hubspot.com/pricing">Pricing</a>
-                    <a href="https://www.hubspot.com/demo">Live Demo</a>
-                    <a href="https://www.hubspot.com/resources">Free Templates</a>
+                    <a href="https://www.hubspot.com/products/get-started" target="_blank" rel="noopener">Free Trial</a>
+                    <a href="https://www.hubspot.com/pricing" target="_blank" rel="noopener">Pricing</a>
+                    <a href="https://www.hubspot.com/demo" target="_blank" rel="noopener">Live Demo</a>
+                    <a href="https://www.hubspot.com/resources" target="_blank" rel="noopener">Free Templates</a>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
-                    <a href="https://knowledge.hubspot.com/" target="_blank">HubSpot Help Center</a>
-                    <a href="https://academy.hubspot.com/" target="_blank">Free Training</a>
-                    <a href="https://www.hubspot.com/integrations">Integrations</a>
-                    <a href="https://developers.hubspot.com/" target="_blank">API Documentation</a>
+                    <a href="https://knowledge.hubspot.com/" target="_blank" rel="noopener">HubSpot Help Center</a>
+                    <a href="https://academy.hubspot.com/" target="_blank" rel="noopener">Free Training</a>
+                    <a href="https://www.hubspot.com/integrations" target="_blank" rel="noopener">Integrations</a>
+                    <a href="https://developers.hubspot.com/" target="_blank" rel="noopener">API Documentation</a>
                 </div>
                 <div class="footer-section">
                     <h4>About This Site</h4>
-                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.4;">
+                    <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.4;">
                         We are HubSpot Affiliates and may earn commission from qualifying purchases. We recommend tools we believe will help your business grow.
                     </p>
                 </div>
@@ -523,5 +691,51 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Performance optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading animation to external links
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 300);
+                });
+            });
+
+            // Lazy loading for images (if any are added later)
+            const lazyImages = document.querySelectorAll('.lazy-image');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy-image');
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
 </body>
 </html>
