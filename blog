@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BestBizToolbox Blog — Business Growth Tips & SaaS Insights</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Expert insights on SaaS tools, business growth strategies, and productivity tips. Stay updated with the latest trends in business technology."
+    />
+    <meta
+      name="keywords"
+      content="SaaS blog, business growth, productivity tips, CRM strategies, marketing automation"
+    />
+    <link rel="canonical" href="https://bestbiztoolbox.vercel.app/blog" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BestBizToolbox Blog - Business Growth & SaaS Insights" />
+    <meta
+      property="og:description"
+      content="Expert insights on SaaS tools, business growth strategies, and productivity tips."
+    />
+    <meta property="og:image" content="https://bestbiztoolbox.vercel.app/og-image.webp" />
+    <meta property="og:url" content="https://bestbiztoolbox.vercel.app/blog" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+        --accent-color: #ff6b6b;
+        --text-dark: #2c3e50;
+        --text-light: #64748b;
+        --background-light: #f8fafc;
+        --white: #ffffff;
+        --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --border-radius: 12px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--background-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Navigation */
+      .nav {
+        background: var(--white);
+        box-shadow: var(--shadow-light);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        text-decoration: none;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .nav-links a.active {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      /* Blog Header */
+      .blog-header {
+        background: var(--primary-gradient);
+        color: var(--white);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+          repeat;
+        z-index: 1;
+      }
+
+      .blog-header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .blog-header h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .blog-header p {
+        font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Blog Categories */
+      .blog-categories {
+        background: var(--white);
+        padding: 2rem 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .categories-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .category-btn {
+        background: var(--background-light);
+        color: var(--text-dark);
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 25px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .category-btn:hover,
+      .category-btn.active {
+        background: var(--accent-color);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      /* Blog Content */
+      .blog-content {
+        padding: 4rem 0;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 4rem;
+      }
+
+      /* Blog Posts */
+      .blog-posts {
+        display: grid;
+        gap: 3rem;
+      }
+
+      .blog-post {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-light);
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .blog-post:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      .blog-post-image {
+        width: 100%;
+        height: 200px;
+        background: var(--secondary-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-post-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zm-16-12c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z'/%3E%3C/g%3E%3C/svg%3E")
+          repeat;
+        z-index: 1;
+      }
+
+      .blog-post-image span {
+        position: relative;
+        z-index: 2;
+      }
+
+      .blog-post-content {
+        padding: 2rem;
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .blog-post-category {
+        background: var(--accent-color);
+        color: var(--white);
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .blog-post h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .blog-post p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .read-more {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .read-more:hover {
+        color: #ff5252;
+        transform: translateX(4px);
+      }
+
+      /* Sidebar */
+      .blog-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .sidebar-widget {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-light);
+      }
+
+      .sidebar-widget h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .recent-posts {
+        list-style: none;
+      }
+
+      .recent-posts li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .recent-posts li:last-child {
+        border-bottom: none;
+      }
+
+      .recent-posts a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .recent-posts a:hover {
+        color: var(--accent-color);
+      }
+
+      .recent-posts .post-date {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-top: 0.25rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background: var(--background-light);
+        color: var(--text-dark);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .tag:hover {
+        background: var(--accent-color);
+        color: var(--white);
+      }
+
+      /* Newsletter Signup */
+      .newsletter-signup {
+        background: var(--primary-gradient);
+        color: var(--white);
+        text-align: center;
+        border-radius: var(--border-radius);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .newsletter-signup::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E")
+          repeat;
+        z-index: 1;
+      }
+
+      .newsletter-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 1rem;
+      }
+
+      .newsletter-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .newsletter-content p {
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input[type="email"] {
+        flex-grow: 1;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .newsletter-form button {
+        background: var(--accent-color);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        color: var(--white);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        background: #ff5252;
+      }
+
+      /* Blog Admin Section */
+      .blog-admin {
+        margin-bottom: 3rem;
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-light);
+      }
+
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .admin-header h2 {
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .add-post-btn {
+        background: var(--accent-color);
+        color: var(--white);
+        border: none;
+        border-radius: 25px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .add-post-btn:hover {
+        background: #ff5252;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1500;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: var(--white);
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        width: 90%;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: var(--shadow-heavy);
+        position: relative;
+      }
+
+      .close {
+        color: #aaa;
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-primary {
+        background: var(--accent-color);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background: #ff5252;
+      }
+
+      .btn-secondary {
+        background: var(--background-light);
+        color: var(--text-dark);
+      }
+
+      .btn-secondary:hover {
+        background: #e2e8f0;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .blog-sidebar {
+          order: 2;
+        }
+      }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo">BestBizToolbox</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="/blog" class="active">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-header-content">
+                <h1>📝 Business Growth Blog</h1>
+                <p>Expert insights on SaaS tools, productivity tips, and strategies to grow your business</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-container">
+                <button class="category-btn active" onclick="filterPosts('all')">All Posts</button>
+                <button class="category-btn" onclick="filterPosts('saas')">SaaS Tools</button>
+                <button class="category-btn" onclick="filterPosts('marketing')">Marketing</button>
+                <button class="category-btn" onclick="filterPosts('productivity')">Productivity</button>
+                <button class="category-btn" onclick="filterPosts('crm')">CRM</button>
+                <button class="category-btn" onclick="filterPosts('growth')">Business Growth</button>
+                <button class="category-btn" onclick="filterPosts('automation')">Automation</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="blog-content">
+        <div class="container">
+            <!-- Blog Administration Section -->
+            <div class="blog-admin">
+                <div class="admin-header">
+                    <h2>Blog Management</h2>
+                    <button class="add-post-btn" onclick="showAddPostForm()">
+                        <span>+</span> Add New Post
+                    </button>
+                </div>
+                <p>Use the form below to add new blog posts. Fill in all the details and click publish to make your post live.</p>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-posts" id="blogPosts">
+                    <!-- Sample Blog Post 1 -->
+                    <article class="blog-post" data-category="saas">
+                        <div class="blog-post-image">
+                            <span>🚀</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">SaaS Tools</span>
+                                <span>January 15, 2025</span>
+                                <span>5 min read</span>
+                            </div>
+                            <h2>The Ultimate Guide to Choosing the Right CRM for Your Business</h2>
+                            <p>Discover how to select the perfect CRM system that will streamline your sales process and boost your business growth. We break down the key features, pricing, and implementation strategies.</p>
+                            <a href="#" class="read-more">
+                                Read More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Sample Blog Post 2 -->
+                    <article class="blog-post" data-category="marketing">
+                        <div class="blog-post-image">
+                            <span>📊</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Marketing</span>
+                                <span>January 12, 2025</span>
+                                <span>7 min read</span>
+                            </div>
+                            <h2>Email Marketing Automation: 10 Campaigns That Actually Convert</h2>
+                            <p>Learn from real-world examples of email marketing campaigns that drive results. Get templates, strategies, and actionable tips to improve your email marketing ROI.</p>
+                            <a href="#" class="read-more">
+                                Read More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Sample Blog Post 3 -->
+                    <article class="blog-post" data-category="productivity">
+                        <div class="blog-post-image">
+                            <span>⚡</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Productivity</span>
+                                <span>January 10, 2025</span>
+                                <span>4 min read</span>
+                            </div>
+                            <h2>5 Business Processes You Should Automate Today</h2>
+                            <p>Stop wasting time on repetitive tasks. Here are the top 5 business processes that can be automated right now to save you hours every week and reduce human error.</p>
+                            <a href="#" class="read-more">
+                                Read More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Sample Blog Post 4 -->
+                    <article class="blog-post" data-category="growth">
+                        <div class="blog-post-image">
+                            <span>💰</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Business Growth</span>
+                                <span>January 8, 2025</span>
+                                <span>6 min read</span>
+                            </div>
+                            <h2>How We Scaled Our Business by 300% Using Free SaaS Tools</h2>
+                            <p>A detailed case study of how strategic use of free and low-cost SaaS tools helped us triple our revenue in just 12 months. Includes tool recommendations and implementation timeline.</p>
+                            <a href="#" class="read-more">
+                                Read More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget newsletter-signup">
+                        <div class="newsletter-content">
+                            <h3>📧 Stay Updated</h3>
+                            <p>Get the latest business growth tips delivered to your inbox weekly.</p>
+                            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                                <input type="email" placeholder="Enter your email" required />
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>📚 Recent Posts</h3>
+                        <ul class="recent-posts">
+                            <li>
+                                <a href="#">The Ultimate Guide to Choosing the Right CRM</a>
+                                <div class="post-date">January 15, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">Email Marketing Automation That Converts</a>
+                                <div class="post-date">January 12, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">5 Business Processes to Automate Today</a>
+                                <div class="post-date">January 10, 2025</div>
+                            </li>
+                            <li>
+                                <a href="#">How We Scaled 300% Using Free SaaS Tools</a>
+                                <div class="post-date">January 8, 2025</div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Adding New Post -->
+    <div id="addPostModal" class="modal" aria-hidden="true" aria-labelledby="modalTitle" role="dialog">
+      <div class="modal-content">
+        <span class="close" role="button" aria-label="Close modal">&times;</span>
+        <h2 id="modalTitle">Add New Blog Post</h2>
+        <form id="addPostForm">
+          <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" name="postTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="postCategory">Category</label>
+            <select id="postCategory" name="postCategory" required>
+              <option value="">Select a category</option>
+              <option value="saas">SaaS Tools</option>
+              <option value="marketing">Marketing</option>
+              <option value="productivity">Productivity</option>
+              <option value="crm">CRM</option>
+              <option value="growth">Business Growth</option>
+              <option value="automation">Automation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="postDate">Date</label>
+            <input type="date" id="postDate" name="postDate" required />
+          </div>
+          <div class="form-group">
+            <label for="postReadTime">Read Time (minutes)</label>
+            <input type="number" id="postReadTime" name="postReadTime" min="1" max="60" required />
+          </div>
+          <div class="form-group">
+            <label for="postSummary">Summary</label>
+            <textarea id="postSummary" name="postSummary" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="postEmoji">Emoji Icon</label>
+            <input type="text" id="postEmoji" name="postEmoji" maxlength="2" placeholder="e.g., 🚀" />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary close-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary">Publish</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Modal open function
+      function showAddPostForm() {
+        const modal = document.getElementById("addPostModal");
+        modal.style.display = "block";
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      // Modal close function
+      function closeModal() {
+        const modal = document.getElementById("addPostModal");
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        document.getElementById("addPostForm").reset();
+      }
+
+      // Close modal on clicking close icon or cancel button
+      document.querySelector(".modal .close").addEventListener("click", closeModal);
+      document.querySelector(".close-btn").addEventListener("click", closeModal);
+
+      // Close modal on clicking outside modal content
+      window.addEventListener("click", (e) => {
+        const modal = document.getElementById("addPostModal");
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Filter blog posts by category
+      function filterPosts(category) {
+        const posts = document.querySelectorAll(".blog-post");
+        const buttons = document.querySelectorAll(".category-btn");
+
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        document.querySelector(`.category-btn[onclick="filterPosts('${category}')"]`).classList.add("active");
+
+        posts.forEach((post) => {
+          if (category === "all" || post.dataset.category === category) {
+            post.style.display = "block";
+          } else {
+            post.style.display = "none";
+          }
+        });
+      }
+
+      // Handle form submission to add new blog post (only client-side demo)
+      document.getElementById("addPostForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const title = this.postTitle.value.trim();
+        const category = this.postCategory.value;
+        const date = new Date(this.postDate.value).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const readTime = this.postReadTime.value;
+        const summary = this.postSummary.value.trim();
+        const emoji = this.postEmoji.value.trim() || "📝";
+
+        if (!title || !category || !date || !readTime || !summary) {
+          alert("Please fill all required fields.");
+          return;
+        }
+
+        // Create new article element
+        const article = document.createElement("article");
+        article.classList.add("blog-post");
+        article.dataset.category = category;
+
+        article.innerHTML = `
+          <div class="blog-post-image"><span>${emoji}</span></div>
+          <div class="blog-post-content">
+            <div class="blog-post-meta">
+              <span class="blog-post-category">${category.charAt(0).toUpperCase() + category.slice(1)}</span>
+              <span>${date}</span>
+              <span>${readTime} min read</span>
+            </div>
+            <h2>${title}</h2>
+            <p>${summary}</p>
+            <a href="#" class="read-more">Read More <span>→</span></a>
+          </div>
+        `;
+
+        document.getElementById("blogPosts").prepend(article);
+
+        // Reset form and close modal
+        this.reset();
+        closeModal();
+
+        // Reset filter to show all posts after adding new post
+        filterPosts("all");
+      });
+
+      // Newsletter form submission (mock)
+      function subscribeNewsletter(e) {
+        e.preventDefault();
+        const emailInput = e.target.querySelector('input[type="email"]');
+        if (emailInput.value) {
+          alert(`Thank you for subscribing with ${emailInput.value}!`);
+          emailInput.value = "";
+        }
+      }
+    </script>
+</body>
+</html>
